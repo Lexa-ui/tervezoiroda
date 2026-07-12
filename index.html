@@ -185,7 +185,7 @@
     .process-track::before{display:none;}
     .why-grid{grid-template-columns:1fr;}
     .why-photo{min-height:220px;}
-    .why-map{min-height:180px;}
+    .why-map{min-height:130px;}
     .contact-bar-grid{grid-template-columns:1fr; gap:40px;}
   }
   @media (max-width:860px){
@@ -389,50 +389,45 @@
     </div>
   </div>
   <div class="why-map">
-    <svg viewBox="0 0 400 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="300" fill="var(--ink-soft)"/>
 
-      <defs>
-        <radialGradient id="pinGrad" cx="35%" cy="30%" r="75%">
-          <stop offset="0%" stop-color="var(--gold-bright)"/>
-          <stop offset="100%" stop-color="var(--gold)"/>
-        </radialGradient>
-        <radialGradient id="glow" cx="50%" cy="46%" r="55%">
-          <stop offset="0%" stop-color="rgba(194,166,130,0.16)"/>
-          <stop offset="100%" stop-color="rgba(194,166,130,0)"/>
-        </radialGradient>
-      </defs>
-      <rect width="400" height="460" fill="var(--ink-soft)"/>
-      <circle cx="200" cy="222" r="200" fill="url(#glow)"/>
-
-      <!-- corner blueprint ticks -->
-      <g stroke="var(--gold)" stroke-width="1" opacity="0.55">
-        <path d="M40 40 H70 M40 40 V70"/>
-        <path d="M360 40 H330 M360 40 V70"/>
-        <path d="M40 404 H70 M40 404 V374"/>
-        <path d="M360 404 H330 M360 404 V374"/>
+      <!-- street grid -->
+      <g stroke="rgba(240,237,229,0.1)" stroke-width="1.5">
+        <line x1="0" y1="40" x2="400" y2="40"/>
+        <line x1="0" y1="90" x2="400" y2="90"/>
+        <line x1="0" y1="150" x2="400" y2="150"/>
+        <line x1="0" y1="210" x2="400" y2="210"/>
+        <line x1="0" y1="260" x2="400" y2="260"/>
+        <line x1="55" y1="0" x2="55" y2="300"/>
+        <line x1="120" y1="0" x2="120" y2="300"/>
+        <line x1="200" y1="0" x2="200" y2="300"/>
+        <line x1="280" y1="0" x2="280" y2="300"/>
+        <line x1="345" y1="0" x2="345" y2="300"/>
       </g>
 
-      <!-- compass rings -->
-      <circle cx="200" cy="222" r="120" fill="none" stroke="rgba(194,166,130,0.28)" stroke-width="1"/>
-      <circle cx="200" cy="222" r="88" fill="none" stroke="rgba(194,166,130,0.22)" stroke-width="1"/>
-      <g stroke="rgba(194,166,130,0.3)" stroke-width="1">
-        <line x1="200" y1="82" x2="200" y2="102"/>
-        <line x1="200" y1="342" x2="200" y2="362"/>
-        <line x1="60" y1="222" x2="80" y2="222"/>
-        <line x1="320" y1="222" x2="340" y2="222"/>
-      </g>
-      <text x="200" y="72" text-anchor="middle" font-family="'Work Sans', sans-serif" font-weight="600" font-size="10" letter-spacing="3" fill="var(--stone-light)">É</text>
-
-      <!-- pin with house glyph, echoing the brand mark -->
-      <path d="M200 176c-19 0-34 15-34 34 0 24 34 60 34 60s34-36 34-60c0-19-15-34-34-34z" fill="url(#pinGrad)"/>
-      <g transform="translate(200,208)" stroke="var(--ink-soft)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-9 2 0 -8 9 2"/>
-        <path d="M-6 0v9h12V0"/>
+      <!-- city blocks -->
+      <g fill="rgba(240,237,229,0.035)">
+        <rect x="60" y="45" width="55" height="40"/>
+        <rect x="205" y="45" width="70" height="40"/>
+        <rect x="285" y="95" width="55" height="50"/>
+        <rect x="60" y="155" width="55" height="50"/>
+        <rect x="125" y="215" width="70" height="40"/>
+        <rect x="285" y="215" width="55" height="40"/>
       </g>
 
-      <line x1="140" y1="330" x2="260" y2="330" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
-      <text x="200" y="356" text-anchor="middle" font-family="'Work Sans', sans-serif" font-weight="600" font-size="13" letter-spacing="2.5" fill="var(--gold-bright)">ÉRD · PEST MEGYE</text>
-      <text x="200" y="378" text-anchor="middle" font-family="'Work Sans', sans-serif" font-weight="400" font-size="10" letter-spacing="1.5" fill="var(--stone)">47.39° É · 18.92° K</text>
+      <!-- main roads -->
+      <g stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
+        <line x1="0" y1="150" x2="400" y2="150"/>
+        <line x1="200" y1="0" x2="200" y2="300"/>
+      </g>
+
+      <!-- pin -->
+      <ellipse cx="200" cy="152" rx="14" ry="4" fill="rgba(0,0,0,0.25)"/>
+      <path d="M200 100c-14 0-25 11-25 25 0 18 25 45 25 45s25-27 25-45c0-14-11-25-25-25z" fill="var(--gold)"/>
+      <circle cx="200" cy="125" r="8" fill="var(--ink-soft)"/>
+
+      <text x="200" y="266" text-anchor="middle" font-family="'Work Sans', sans-serif" font-weight="600" font-size="13" letter-spacing="2.5" fill="var(--gold-bright)">ÉRD · PEST MEGYE</text>
     </svg>
   </div>
 </section>
